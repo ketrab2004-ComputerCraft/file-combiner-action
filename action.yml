@@ -1,0 +1,45 @@
+name: "File combiner action"
+description: "Github action for combining files into a single file"
+author: "ketrab2004"
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
+
+inputs:
+  out_file:
+    required: true
+    description: "the file and path to combine everything into"
+    default: "out/full.txt"
+
+  glob:
+    required: true
+    description: "glob of files to combine"
+    default: ["src/**/*"]
+  ignore_glob:
+    required: false
+    description: "glob of files to exclude"
+
+  minimize_lua:
+    required: true
+    description: "whether or not to use luamin to minimize lua files"
+    default: true
+
+  lua_rename_globals:
+    required: false
+    description: "whether to let the lua minimizer rename globals"
+    default: true
+  lua_rename_variables:
+    required: false
+    description: "whether to let the lua minimizer rename variables"
+    default: false
+  lua_solve_math:
+    required: false
+    description: "whether to make the lua minimizer solve math"
+    default: false
+
+outputs:
+  combined_files:
+    description: "number counting the amount of files combined"
+  minimized_files:
+    description: "number counting the amount of files that have been minimized"

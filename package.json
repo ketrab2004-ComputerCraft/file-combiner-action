@@ -1,0 +1,32 @@
+{
+    "private": true,
+
+    "version": "0.1.0",
+    "license": "MIT OR Apache-2.0",
+    "name": "file-combiner-action",
+    "description": "github action for combining files into one",
+    "author": "ketrab2004",
+    "keywords": [ "github", "git", "action", "lua", "combining-files", "github-action" ],
+
+    "bugs": { "url": "https://github.com/ketrab2004-ComputerCraft/file-combiner-action/issues" },
+    "homepage": "https://github.com/ketrab2004-ComputerCraft/file-combiner-action#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ketrab2004-ComputerCraft/file-combiner-action.git"
+    },
+
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "ncc build --v8-cache --source-map --license LICENSES"
+    },
+    "dependencies": {
+        "@actions/core": "~1.10.0",
+        "glob": "~10.0.0",
+        "lua-format": "~1.4.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.4",
+        "@types/node": "~18.15.11",
+        "@vercel/ncc": "^0.36.1"
+    }
+}
